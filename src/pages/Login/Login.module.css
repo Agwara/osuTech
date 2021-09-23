@@ -6,24 +6,27 @@
 }
 
 .item1 {
-  flex-basis: 50%;
+  flex-basis: 50vw;
   opacity: 0.9;
 }
 
 .item2 {
-  flex-basis: 50%;
+  flex-basis: 50vw;
 }
 
 @media screen and (max-width: 800px) {
   .container {
     flex-direction: column;
+    height: min-content;
   }
 
   .item1 {
-    flex-basis: 800px;
+    flex-basis: 300px;
+    height: 300px;
   }
 
   .item2 {
-    flex-basis: 600px;
+    flex-basis: 400px;
+    height: 400px;
   }
 }

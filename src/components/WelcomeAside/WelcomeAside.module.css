@@ -65,7 +65,7 @@
 
 .quoteCarousel {
   position: absolute;
-  top: 52%;
+  top: 50%;
   left: 50px;
 
   height: min-content;
@@ -74,17 +74,17 @@
 
 @media screen and (max-width: 900px) {
   .quoteCarousel {
-    width: 300px;
+    width: 310px;
     left: 10px;
   }
 }
 
 @media screen and (max-width: 800px) {
   .headerText {
-    margin-top: 30px;
+    margin-top: 20px;
   }
-  .quoteCarousel {
-    top: 40%;
+  .welcomeText {
+    top: 20px;
   }
 }
 
@@ -161,5 +161,31 @@
   .imageFour {
     grid-row: 1/-1;
     grid-column: 2/3;
+  }
+
+  .quoteCarousel {
+    top: 30%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .imageOne {
+    flex-basis: 40%;
+  }
+
+  .imageGallery {
+    flex-basis: 60%;
+  }
+
+  .quoteCarousel {
+    top: 30%;
+  }
+
+  .welcomeText {
+    top: 20px;
+  }
+
+  .headerText {
+    margin-left: 15px;
   }
 }
