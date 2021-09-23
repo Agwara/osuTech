@@ -6,7 +6,7 @@ const LoginForm = () => {
   return (
     <div className={loginStyles.container}>
       <div className={loginStyles.form}>
-        <h3>Working on the login form now</h3>
+        <h3>Login component</h3>
       </div>
     </div>
   )

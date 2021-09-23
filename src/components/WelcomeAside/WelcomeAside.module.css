@@ -56,6 +56,13 @@
   transform: translateX(-50%);
 }
 
+@media screen and (max-width: 700px) {
+  .welcomeText,
+  .headerText {
+    font-size: 25px;
+  }
+}
+
 .quoteCarousel {
   position: absolute;
   top: 52%;
@@ -63,6 +70,36 @@
 
   height: min-content;
   width: 400px;
+}
+
+@media screen and (max-width: 900px) {
+  .quoteCarousel {
+    width: 300px;
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .headerText {
+    margin-top: 30px;
+  }
+  .quoteCarousel {
+    top: 40%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .quoteCarousel {
+    width: 250px;
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .quoteCarousel {
+    width: 200px;
+    left: 10px;
+  }
 }
 
 .imageTwo {
@@ -99,4 +136,30 @@
     url("/src/assets/welcome/Rectangle5.png");
   background-size: cover;
   background-position: left;
+}
+
+@media screen and (max-width: 800px) {
+  .imageOne {
+    flex-basis: 50%;
+  }
+
+  .imageGallery {
+    flex-basis: 50%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .imageTwo {
+    display: none;
+  }
+
+  .imageThree {
+    grid-row: 1/-1;
+    grid-column: 1/2;
+  }
+
+  .imageFour {
+    grid-row: 1/-1;
+    grid-column: 2/3;
+  }
 }
