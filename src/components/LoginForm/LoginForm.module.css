@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  height: 50%;
+  width: 80%;
+
+  background-color: blue;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  font-size: 24px;
+}
