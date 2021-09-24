@@ -56,13 +56,6 @@
   transform: translateX(-50%);
 }
 
-@media screen and (max-width: 700px) {
-  .welcomeText,
-  .headerText {
-    font-size: 25px;
-  }
-}
-
 .quoteCarousel {
   position: absolute;
   top: 50%;
@@ -70,36 +63,6 @@
 
   height: min-content;
   width: 400px;
-}
-
-@media screen and (max-width: 900px) {
-  .quoteCarousel {
-    width: 310px;
-    left: 10px;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .headerText {
-    margin-top: 20px;
-  }
-  .welcomeText {
-    top: 20px;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .quoteCarousel {
-    width: 250px;
-    left: 10px;
-  }
-}
-
-@media screen and (max-width: 300px) {
-  .quoteCarousel {
-    width: 200px;
-    left: 10px;
-  }
 }
 
 .imageTwo {
@@ -138,6 +101,13 @@
   background-position: left;
 }
 
+@media screen and (max-width: 900px) {
+  .quoteCarousel {
+    width: 310px;
+    left: 10px;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .imageOne {
     flex-basis: 50%;
@@ -166,6 +136,20 @@
   .quoteCarousel {
     top: 30%;
   }
+
+  .headerText {
+    margin-top: 20px;
+  }
+  .welcomeText {
+    top: 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .welcomeText,
+  .headerText {
+    font-size: 25px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -187,5 +171,19 @@
 
   .headerText {
     margin-left: 15px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .quoteCarousel {
+    width: 250px;
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .quoteCarousel {
+    width: 200px;
+    left: 10px;
   }
 }
