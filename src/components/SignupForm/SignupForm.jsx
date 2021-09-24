@@ -3,9 +3,13 @@ import {Link} from "react-router-dom"
 
 import Button from "../Button/Button"
 import TextField from "../InputFields/TextField/TextField"
+import DropDown from "../InputFields/DropDown/DropDown"
 import signupFormStyles from "./SignupForm.module.css"
 
 import starIcon from "../../assets/otherIcons/greenStar.svg"
+
+const countryList = ["Ghana", "Nigeria", "Zimbabwe"]
+const religionList = ["Christainity", "Islam", "Atheism", "Judaism"]
 
 const SignupForm = () => {
   // Step One values
@@ -20,10 +24,18 @@ const SignupForm = () => {
   const [processSteps, setProcessSteps] = useState("stepOne")
   const [showVerification, setShowVerification] = useState(true)
 
-
+  // Step Three Values
+  const [country, setCountry] = useState("")
+  const [address, setAddress] = useState("")
+  const [religion, setReligion] = useState("")
+  const [sponsorPhone, setSponsorphone] = useState("")
 
   const startStepTwo = () => {
     setProcessSteps("stepTwo")
+  }
+
+  const startStepThree = () => {
+    setProcessSteps("stepThree")
   }
 
   if (processSteps === "stepOne") {
@@ -129,7 +141,62 @@ const SignupForm = () => {
           <div className={signupFormStyles.btn}>
             <Button
               name="Log in" 
-              action={startStepTwo}
+              action={startStepThree}
+            />
+          </div>
+        </div>
+      </div>
+    )
+  }
+
+  if (processSteps === "stepThree") {
+    return (
+      <div className={signupFormStyles.container}>
+        <div className={signupFormStyles.formContainer}>
+          <div className={signupFormStyles.formHeader}>
+            <h3>Create your student account</h3>
+          </div>
+  
+          <div className={signupFormStyles.item}>
+            <DropDown
+              label="Nationality"
+              value={country}
+              setValue={setCountry}
+              data={[...countryList]}
+            />
+          </div>
+
+          <div className={signupFormStyles.item}>
+            <TextField
+              label="Address"
+              type="text"
+              value={address}
+              setValue={setAddress}
+            />
+          </div>
+
+          <div className={signupFormStyles.item}>
+            <DropDown
+              label="Religion"
+              value={religion}
+              setValue={setReligion}
+              data={[...religionList]}
+            />
+          </div>
+
+          <div className={signupFormStyles.item}>
+            <TextField
+              label="Guardian/Parent Phone"
+              type="number"
+              value={sponsorPhone}
+              setValue={setSponsorphone}
+            />
+          </div>
+  
+          <div className={signupFormStyles.btn}>
+            <Button
+              name="Submit" 
+              action={startStepThree}
             />
           </div>
         </div>
