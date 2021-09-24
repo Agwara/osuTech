@@ -41,3 +41,12 @@
   right: 15px;
   top: 20px;
 }
+
+@media screen and (max-width: 700px) {
+  .container {
+    height: 90%;
+  }
+  .select {
+    height: 40px;
+  }
+}
