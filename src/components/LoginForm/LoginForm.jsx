@@ -8,12 +8,16 @@ import loginStyles from "./LoginForm.module.css"
 const LoginForm = () => {
   const [studentNumber, setStudentNumber] = useState("")
   const [password, setPassword] = useState("")
+
+  const startLogin = () => {
+    
+  }
   return (
     <div className={loginStyles.container}>
       <div className={loginStyles.signupLinkContainer}>
         <p className={loginStyles.linkText}>
           Are you a new student?  
-          <Link to="/signup" className={loginStyles.link}> Sign up here</Link>
+          <Link to="/signup" className={loginStyles.link}>Sign up here</Link>
         </p>
       </div>
       <div className={loginStyles.formContainer}>
@@ -42,6 +46,7 @@ const LoginForm = () => {
         <div className={`${loginStyles.loginBtn} ${loginStyles.formInputWidth}`}>
           <Button
             name="Log in" 
+            action={startLogin}
           />
         </div>
 
