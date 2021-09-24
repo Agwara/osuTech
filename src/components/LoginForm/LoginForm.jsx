@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import {Link} from "react-router-dom"
 
+import Button from "../Button/Button"
 import TextField from "../InputFields/TextField/TextField"
 import loginStyles from "./LoginForm.module.css" 
 
@@ -38,9 +39,15 @@ const LoginForm = () => {
           />
         </div>
 
-        <div className={`${loginStyles.loginBtn} ${loginStyles.formInputWidth}`}></div>
+        <div className={`${loginStyles.loginBtn} ${loginStyles.formInputWidth}`}>
+          <Button
+            name="Log in" 
+          />
+        </div>
 
-        <div className={`${loginStyles.forgotPassword} ${loginStyles.formInputWidth}`}></div>
+        <div className={`${loginStyles.forgotPassword} ${loginStyles.formInputWidth}`}>
+          <p>Forgot your password?</p>
+        </div>
       </div>
     </div>
   )
