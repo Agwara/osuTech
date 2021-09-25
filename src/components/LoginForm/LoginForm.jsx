@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 
 import Button from "../Button/Button"
 import TextField from "../InputFields/TextField/TextField"
@@ -9,9 +9,12 @@ const LoginForm = () => {
   const [studentNumber, setStudentNumber] = useState("")
   const [password, setPassword] = useState("")
 
+  const history = useHistory()
+  
   const startLogin = () => {
-    
+    history.push("/")
   }
+
   return (
     <div className={loginStyles.container}>
       <div className={loginStyles.signupLinkContainer}>

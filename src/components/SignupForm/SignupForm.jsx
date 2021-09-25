@@ -1,5 +1,5 @@
 import React, {useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useHistory} from "react-router-dom"
 
 import Button from "../Button/Button"
 import TextField from "../InputFields/TextField/TextField"
@@ -37,6 +37,12 @@ const SignupForm = () => {
   const startStepThree = () => {
     setProcessSteps("stepThree")
   }
+
+  const history = useHistory()
+
+  const startLogin = () => {
+    history.push("/")
+  } 
 
   if (processSteps === "stepOne") {
     return (
@@ -196,7 +202,7 @@ const SignupForm = () => {
           <div className={signupFormStyles.btn}>
             <Button
               name="Submit" 
-              action={startStepThree}
+              action={startLogin}
             />
           </div>
         </div>

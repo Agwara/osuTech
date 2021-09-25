@@ -1,0 +1,18 @@
+.container {
+  height: 100%;
+  width: 100%;
+  background: #250444;
+}
+
+.test {
+  height: 40px;
+  width: 40px;
+
+  border-radius: 50%;
+
+  background-color: brown;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 800px) {
+}
