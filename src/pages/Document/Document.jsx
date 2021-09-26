@@ -4,7 +4,7 @@ import documentStyles from "./Document.module.css"
 
 const Document = () => {
   return (
-    <div>
+    <div className={documentStyles.container}>
       Document
     </div>
   )

@@ -13,6 +13,7 @@ const PrivateRoute = ({
 }) => {
 
 	const [openSideBar, setOpenSideBar] = useState(false)
+	const [pageUrl, setPageUrl] = useState("")
 	const windowWidth = useWindowWidth()
 
 	return (
@@ -27,6 +28,8 @@ const PrivateRoute = ({
 						<SideBar
 							openSideBar={openSideBar}
 							setOpenSideBar={setOpenSideBar} 
+							pageUrl={pageUrl}
+							setPageUrl={setPageUrl}
 						/>
 					</div>
 					<div className={pageStyle.header}>

@@ -4,7 +4,7 @@ import resultStyles from "./Result.module.css"
 
 const Result = () => {
   return (
-    <div>
+    <div className={resultStyles.container}>
       Result
     </div>
   )

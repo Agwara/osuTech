@@ -4,7 +4,7 @@ import registrationStyles from "./Registration.module.css"
 
 const Registration = () => {
   return (
-    <div>
+    <div className={registrationStyles.container}>
       Registration
     </div>
   )

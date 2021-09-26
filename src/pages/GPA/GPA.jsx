@@ -4,7 +4,7 @@ import gpaStyles from "./GPA.module.css"
 
 const GPA = () => {
   return (
-    <div>
+    <div className={gpaStyles.container}>
       GPA
     </div>
   )

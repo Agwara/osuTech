@@ -6,6 +6,7 @@ import Document from "../pages/Document/Document"
 import GPA from "../pages/GPA/GPA"
 import Login from "../pages/Login/Login"
 import PageNotFound from "../pages/PageNotFound/PageNotFound"
+import PrintOut from "../pages/PrintOut/PrintOut"
 import Profile from "../pages/Profile/Profile" 
 import Registartion from "../pages/Registration/Registration"
 import Result from "../pages/Result/Result"
@@ -24,6 +25,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/gpa" component={GPA} />
 
         <Route exact path="/login" component={Login} />
+
+        <PrivateRoute exact path="/print" component={PrintOut} />
 
         <PrivateRoute exact path="/profile" component={Profile} />
 

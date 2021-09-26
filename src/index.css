@@ -25,11 +25,11 @@ code {
     monospace;
 }
 
-.hide-scroll-bar::-webkit-scrollbar {
+.hideScrollBar::-webkit-scrollbar {
   display: none;
 }
 
-.hide-scroll-bar {
+.hideScrollBar {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
