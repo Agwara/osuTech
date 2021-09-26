@@ -123,8 +123,8 @@ const SideBar = (props) => {
             alt=""
             src={helpIcon} 
             className={sidebarStyles.help}
-            height="25"
-            width="25"
+            height="20"
+            width="20"
           />
           <p>Help</p>
         </div>
@@ -134,8 +134,8 @@ const SideBar = (props) => {
             alt=""
             src={logoutIcon} 
             className={sidebarStyles.help}
-            height="25"
-            width="25"
+            height="20"
+            width="20"
           />
           <p>Logout</p>
         </div>

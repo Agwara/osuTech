@@ -21,6 +21,16 @@
 .component {
   grid-row: 2/3;
   grid-column: 2/3;
+  overflow-y: scroll;
+}
+
+.component::-webkit-scrollbar {
+  display: none;
+}
+
+.component {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .closeSideBar,
