@@ -1,6 +1,5 @@
 import React from "react"
 
-import officerLogo from "../../assets/dashboard/officer.svg"
 import informationStyles from "./Information.module.css"
 
 const Information = () => {
