@@ -14,11 +14,11 @@
 
 .text {
   height: min-content;
-  font-size: 14px;
+  font-size: 16px;
+  line-height: 30px;
 }
 
 .officer {
-  font-family: Product Sans Medium;
   font-style: normal;
   font-weight: 600;
   font-size: 18px;

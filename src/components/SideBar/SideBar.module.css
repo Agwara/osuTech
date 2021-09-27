@@ -26,7 +26,6 @@
 }
 
 .containerTwoText {
-  font-family: "Avenir" "Next";
   font-style: normal;
   font-weight: 700;
   font-size: 30px;
@@ -68,7 +67,6 @@
 
 .active p,
 .inactive p {
-  font-family: "Avenir" "Next";
   font-style: normal;
   font-weight: 600;
   font-size: 15px;
@@ -103,10 +101,10 @@
 
 .helpContainer p,
 .logoutContainer p {
-  font-family: "Avenir" "Next";
   font-style: normal;
   font-weight: 500;
   font-size: 16px;
+  text-transform: uppercase;
 
   color: #ffffff;
 }
@@ -135,16 +133,12 @@
 @media screen and (max-width: 500px) {
   .active p,
   .inactive p {
-    font-family: "Avenir" "Next";
-    font-style: normal;
     font-weight: 500;
     font-size: 13px;
-    text-transform: uppercase;
   }
 
   .helpContainer p,
   .logoutContainer p {
-    font-family: "Avenir" "Next";
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
