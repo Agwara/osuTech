@@ -20,6 +20,7 @@ const SideBar = (props) => {
 
   const handleToggle = () => {
     props.setOpenSideBar(!props.openSideBar)
+    props.setStartToggle(true)
   }
 
   const handleUrlChange =  (url) =>{
