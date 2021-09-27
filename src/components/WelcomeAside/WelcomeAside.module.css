@@ -139,7 +139,7 @@
     margin-top: 20px;
   }
   .welcomeText {
-    top: 20px;
+    top: -20px;
   }
 }
 
@@ -163,9 +163,9 @@
     top: 30%;
   }
 
-  .welcomeText {
+  /* .welcomeText {
     top: 20px;
-  }
+  } */
 
   .headerText {
     margin-left: 15px;

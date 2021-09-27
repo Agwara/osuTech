@@ -13,25 +13,29 @@ const PrivateRoute = ({
 }) => {
 
 	const [openSideBar, setOpenSideBar] = useState(false)
+	const [startToggle, setStartToggle] = useState(false)
 	const [pageUrl, setPageUrl] = useState("")
 	const windowWidth = useWindowWidth()
+
+
 
 	return (
 		<Route {...rest} component={(props) => (
 			true ? (
 				<div className={pageStyle.container}>		
-					<div 
-						className={
-							windowWidth >= 800 ? pageStyle.sidebar : 
-							openSideBar === true ? pageStyle.openSideBar : pageStyle.closeSideBar}
+					<div className={windowWidth > 800 ? pageStyle.sideBar : openSideBar ? 
+						pageStyle.openSideBar : startToggle ? pageStyle.closeSideBar : pageStyle.initialClose
+						}
 					>
 						<SideBar
 							openSideBar={openSideBar}
 							setOpenSideBar={setOpenSideBar} 
 							pageUrl={pageUrl}
 							setPageUrl={setPageUrl}
+							setStartToggle={setStartToggle}
 						/>
 					</div>
+
 					<div className={pageStyle.header}>
 						<Header
 							openSideBar={openSideBar}

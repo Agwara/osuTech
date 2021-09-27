@@ -4,6 +4,8 @@
   background: #250444;
 
   overflow-y: scroll;
+  /* grid-row: 1/-1;
+  grid-column: 1/2; */
 }
 
 .container::-webkit-scrollbar {

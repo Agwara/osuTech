@@ -14,7 +14,6 @@ import sidebarStyles from "./SideBar.module.css"
 import helpIcon from "../../assets/sidebarIcons/help.svg"
 import logoutIcon from "../../assets/sidebarIcons/logout.svg"
 
-// Remember to add the "help" and "logout" btns here
 
 const SideBar = (props) => {
   const history = useHistory()
@@ -27,6 +26,7 @@ const SideBar = (props) => {
     props.setPageUrl(url)
     history.push(`/${url}`)
     props.setOpenSideBar(false)
+    props.setStartToggle(true)
   }
 
   const startLogout = () => {

@@ -38,19 +38,24 @@
   position: absolute;
   width: 250px;
   height: 100vh;
-
-  top: 0px;
-}
-
-.closeSideBar {
-  left: -250px;
+  z-index: 10;
 }
 
 .openSideBar {
-  z-index: 10;
   animation-name: openSideBar;
-  animation-duration: 0.8s;
+  animation-duration: 0.6s;
   animation-fill-mode: forwards;
+}
+
+.closeSideBar {
+  z-index: 10;
+  animation-name: closeSideBar;
+  animation-duration: 0.6s;
+  animation-fill-mode: forwards;
+}
+
+.initialClose {
+  display: none;
 }
 
 @keyframes openSideBar {
@@ -72,7 +77,6 @@
     left: -250px;
   }
 }
-
 @media screen and (max-width: 800px) {
   .container {
     grid-template-columns: 1fr 1fr;
@@ -95,17 +99,23 @@
     width: 80%;
   }
 
-  .closeSideBar {
-    left: -80%;
-  }
-
   @keyframes openSideBar {
     0% {
-      left: -80%;
+      left: -70%;
     }
 
     100% {
       left: 0%;
+    }
+  }
+
+  @keyframes closeSideBar {
+    0% {
+      left: 0%;
+    }
+
+    100% {
+      left: -80%;
     }
   }
 }
