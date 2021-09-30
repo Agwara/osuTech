@@ -1,4 +1,5 @@
 import React, {useState} from "react"
+import {useHistory} from "react-router-dom"
 
 import EmailIcon from "../../assets/dashboard/email"
 import TimetbleIcon from "../../assets/dashboard/timetable"
@@ -10,11 +11,18 @@ import MapIcon from "../../assets/dashboard/map"
 import HelpIcon from "../../assets/dashboard/help"
 import quickAccessStyles from "./QuickAccess.module.css"
 
-const QuickAccess = () => {
+const QuickAccess = (props) => {
   const [hoverItem, setHoverItem] = useState("")
+
+  const history = useHistory()
 
   const handleHoverChange = (item) => {
     setHoverItem(item)
+  }
+
+  const handlePageChange = (url) => {
+    props.setStartToggle(false)
+    history.push(url)
   }
 
   return (
@@ -78,7 +86,9 @@ const QuickAccess = () => {
           {hoverItem === "map" ? <MapIcon color="#DF8A09" /> : <MapIcon color="#2D0353" />}
           <p className={quickAccessStyles.name}>Campus Map</p>
         </li>
+
         <li 
+          onClick={() => handlePageChange("/help")}
           onMouseLeave={() => handleHoverChange("")} 
           onMouseEnter={() => handleHoverChange("help")} 
           className={quickAccessStyles.item}

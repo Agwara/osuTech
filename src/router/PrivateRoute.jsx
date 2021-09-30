@@ -14,10 +14,7 @@ const PrivateRoute = ({
 
 	const [openSideBar, setOpenSideBar] = useState(false)
 	const [startToggle, setStartToggle] = useState(false)
-	const [pageUrl, setPageUrl] = useState("")
 	const windowWidth = useWindowWidth()
-
-
 
 	return (
 		<Route {...rest} component={(props) => (
@@ -30,8 +27,6 @@ const PrivateRoute = ({
 						<SideBar
 							openSideBar={openSideBar}
 							setOpenSideBar={setOpenSideBar} 
-							pageUrl={pageUrl}
-							setPageUrl={setPageUrl}
 							setStartToggle={setStartToggle}
 						/>
 					</div>
@@ -43,7 +38,10 @@ const PrivateRoute = ({
 						/>
 					</div>
 					<div className={pageStyle.component}>
-						<Component {...props}/>
+						<Component 
+							{...props}
+							setStartToggle={setStartToggle} 
+						/>
 					</div>		
 				</div>
 			) : (

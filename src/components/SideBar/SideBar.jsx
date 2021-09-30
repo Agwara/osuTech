@@ -24,7 +24,6 @@ const SideBar = (props) => {
   }
 
   const handleUrlChange =  (url) =>{
-    props.setPageUrl(url)
     history.push(`/${url}`)
     props.setOpenSideBar(false)
     props.setStartToggle(true)
@@ -48,71 +47,71 @@ const SideBar = (props) => {
 
       <ul className={sidebarStyles.nav}>
         <li 
-          className={props.pageUrl === "" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/" ? sidebarStyles.active : sidebarStyles.inactive}
           onClick={() => handleUrlChange("")}
         >
           {
-            props.pageUrl === "" ? <DashboardIcon color={"#DF8A09"}/> : <DashboardIcon color={"white"} />
+            history.location.pathname === "/" ? <DashboardIcon color={"#DF8A09"}/> : <DashboardIcon color={"white"} />
           }
           <p>Dashboard</p>
         </li>
 
         <li 
           onClick={() => handleUrlChange("profile")}
-          className={props.pageUrl === "profile" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/profile" ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
-            props.pageUrl === "profile" ? <ProfileIcon color={"#DF8A09"}/> : <ProfileIcon color={"white"} />
+            history.location.pathname === "/profile" ? <ProfileIcon color={"#DF8A09"}/> : <ProfileIcon color={"white"} />
           }
           <p>Profile</p>
         </li>
 
         <li 
           onClick={() => handleUrlChange("result")}
-          className={props.pageUrl === "result" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/result" ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
-            props.pageUrl === "result" ? <ResultIcon color={"#DF8A09"}/> : <ResultIcon color={"white"} />
+            history.location.pathname === "/result" ? <ResultIcon color={"#DF8A09"}/> : <ResultIcon color={"white"} />
           }
           <p>Result</p>
         </li>
 
         <li 
           onClick={() => handleUrlChange("registration")}
-          className={props.pageUrl === "registration" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/registration" ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
-            props.pageUrl === "registration" ? <Registration color={"#DF8A09"}/> : <Registration color={"white"} />
+            history.location.pathname === "/registration" ? <Registration color={"#DF8A09"}/> : <Registration color={"white"} />
           }
           <p>Course Registration</p>
         </li>
 
         <li 
           onClick={() => handleUrlChange("print")}
-          className={props.pageUrl === "print" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "print" ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
-            props.pageUrl === "print" ? <PrintOutIcon color={"#DF8A09"}/> : <PrintOutIcon color={"white"} />
+            history.location.pathname === "/print" ? <PrintOutIcon color={"#DF8A09"}/> : <PrintOutIcon color={"white"} />
           }
           <p>Print Out</p>
         </li>
 
         <li 
           onClick={() => handleUrlChange("gpa")}
-          className={props.pageUrl === "gpa" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/gpa" ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
-            props.pageUrl === "gpa" ? <GpaIcon color={"#DF8A09"}/> : <GpaIcon color={"white"} />
+            history.location.pathname === "/gpa" ? <GpaIcon color={"#DF8A09"}/> : <GpaIcon color={"white"} />
           }
           <p>Gpa</p>
         </li>
 
         <li 
           onClick={() => handleUrlChange("document")}
-          className={props.pageUrl === "document" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/document" ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
-            props.pageUrl === "document" ? <DocumentIcon color={"#DF8A09"}/> : <DocumentIcon color={"white"} />
+            history.location.pathname === "/document" ? <DocumentIcon color={"#DF8A09"}/> : <DocumentIcon color={"white"} />
           }
           <p>Document</p>
         </li>

@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Dashboard from "../pages/Dashboard/Dashboard"
 import Document from "../pages/Document/Document"
 import GPA from "../pages/GPA/GPA"
+import Help from "../pages/Help/Help"
 import Login from "../pages/Login/Login"
 import PageNotFound from "../pages/PageNotFound/PageNotFound"
 import PrintOut from "../pages/PrintOut/PrintOut"
@@ -23,6 +24,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/document" component={Document} />
 
         <PrivateRoute exact path="/gpa" component={GPA} />
+
+        <PrivateRoute exact path="/help" component={Help} />
 
         <Route exact path="/login" component={Login} />
 
