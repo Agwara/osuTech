@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  padding: 40px 0px 0px 0px;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 30px;
+  align-items: center;
+}
+
+.header {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 97%;
+
+  color: #2d0353;
+}
+
+.mapContainer {
+  width: 85%;
+  height: 500px;
+
+  border: 1px #ccc solid;
+  border-radius: 6px;
+}
+
+.mapKey {
+  width: 85%;
+  height: 60px;
+}
+
+@media screen and (max-width: 800px) {
+  .mapContainer {
+    height: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mapContainer {
+    height: 300px;
+  }
+}

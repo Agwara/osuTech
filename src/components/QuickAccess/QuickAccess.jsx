@@ -79,6 +79,7 @@ const QuickAccess = (props) => {
           <p className={quickAccessStyles.name}>Student Union</p>
         </li>
         <li 
+          onClick={() => handlePageChange("/school-map")}
           onMouseLeave={() => handleHoverChange("")} 
           onMouseEnter={() => handleHoverChange("map")} 
           className={quickAccessStyles.item}

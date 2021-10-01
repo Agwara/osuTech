@@ -11,6 +11,7 @@ import PrintOut from "../pages/PrintOut/PrintOut"
 import Profile from "../pages/Profile/Profile" 
 import Registartion from "../pages/Registration/Registration"
 import Result from "../pages/Result/Result"
+import SchoolMap from "../pages/SchoolMap/SchoolMap"
 import Signup from "../pages/Signup/Signup"
 
 import PrivateRoute from "./PrivateRoute"
@@ -36,6 +37,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/registration" component={Registartion} />
 
         <PrivateRoute exact path="/result" component={Result} />
+
+        <PrivateRoute exact path="/school-map" component={SchoolMap} />
 
         <Route exact path="/signup" component={Signup} />
 
