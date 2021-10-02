@@ -167,6 +167,7 @@ const CourseTimeTable = () => {
           </div>
         </div>
       </div>
+
     </div>
   )
 }

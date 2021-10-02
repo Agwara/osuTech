@@ -44,3 +44,13 @@
   color: #2d0353;
   border-bottom: 4px #2d0353 solid;
 }
+
+.timeTableText {
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 150%;
+
+  color: #df8a09;
+}

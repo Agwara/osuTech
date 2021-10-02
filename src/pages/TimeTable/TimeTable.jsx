@@ -30,6 +30,7 @@ const TimeTable = () => {
 
       <div className={styles.timeTable}>
         {showExam ? <ExamTimeTable /> : <CourseTimeTable />}
+        <p className={styles.timeTableText}>NB: Timetable is subjective to change</p>
       </div>
     </div>
   )
