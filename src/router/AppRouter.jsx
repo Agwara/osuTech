@@ -14,6 +14,8 @@ import Result from "../pages/Result/Result"
 import SchoolMap from "../pages/SchoolMap/SchoolMap"
 import Signup from "../pages/Signup/Signup"
 
+import TimeTable from "../pages/TimeTable/TimeTable"
+
 import PrivateRoute from "./PrivateRoute"
 
 const AppRouter = () => {
@@ -41,6 +43,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/school-map" component={SchoolMap} />
 
         <Route exact path="/signup" component={Signup} />
+
+        <PrivateRoute exact path="/time-table" component={TimeTable} />
 
         <Route exact path="*" component={PageNotFound} />
       </Switch>

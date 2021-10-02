@@ -8,13 +8,18 @@
   align-items: center;
 }
 
-.header {
+.header,
+.headerKey {
   font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 97%;
+  font-weight: 600;
+  font-size: 18px;
+  /* line-height: 97%; */
 
   color: #2d0353;
+}
+
+.headerKey {
+  margin-bottom: 10px;
 }
 
 .mapContainer {
@@ -27,7 +32,7 @@
 
 .mapKey {
   width: 85%;
-  height: 60px;
+  min-height: 50px;
 }
 
 @media screen and (max-width: 800px) {

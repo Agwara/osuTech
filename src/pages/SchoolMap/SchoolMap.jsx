@@ -15,6 +15,7 @@ const SchoolMap = () => {
       </div>
 
       <div className={styles.mapKey}>
+        <h3 className={styles.headerKey}>Key</h3>
         <MapKeys />
       </div>
     </div>

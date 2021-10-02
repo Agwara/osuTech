@@ -38,7 +38,9 @@ const QuickAccess = (props) => {
           {hoverItem === "email" ? <EmailIcon color="#DF8A09" /> : <EmailIcon color="#2D0353" />}
           <p className={quickAccessStyles.name}>Email</p>
         </li>
+
         <li 
+          onClick={() => handlePageChange("/time-table")}
           onMouseLeave={() => handleHoverChange("")} 
           onMouseEnter={() => handleHoverChange("timetable")} 
           className={quickAccessStyles.item}
