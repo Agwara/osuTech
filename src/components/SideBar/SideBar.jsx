@@ -33,6 +33,10 @@ const SideBar = (props) => {
     history.push("/login")
   }
 
+  const goToHelpPage = () => {
+    history.push("/help")
+  }
+
   return (
     <div className={sidebarStyles.container}>
       <div className={sidebarStyles.containerTwo}>
@@ -88,7 +92,7 @@ const SideBar = (props) => {
 
         <li 
           onClick={() => handleUrlChange("print")}
-          className={history.location.pathname === "print" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/print" ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
             history.location.pathname === "/print" ? <PrintOutIcon color={"#DF8A09"}/> : <PrintOutIcon color={"white"} />
@@ -118,7 +122,7 @@ const SideBar = (props) => {
       </ul>
 
       <div className={sidebarStyles.containerThree}>
-        <div className={sidebarStyles.helpContainer}>
+        <div className={sidebarStyles.helpContainer} onClick={goToHelpPage}>
           <img
             alt=""
             src={helpIcon} 

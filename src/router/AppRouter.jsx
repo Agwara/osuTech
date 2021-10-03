@@ -13,6 +13,7 @@ import Registartion from "../pages/Registration/Registration"
 import Result from "../pages/Result/Result"
 import SchoolMap from "../pages/SchoolMap/SchoolMap"
 import Signup from "../pages/Signup/Signup"
+import StudentUnion from "../pages/StudentUnion/StudentUnion"
 
 import TimeTable from "../pages/TimeTable/TimeTable"
 
@@ -43,6 +44,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/school-map" component={SchoolMap} />
 
         <Route exact path="/signup" component={Signup} />
+
+        <PrivateRoute exact path="/student-union" component={StudentUnion} />
 
         <PrivateRoute exact path="/time-table" component={TimeTable} />
 

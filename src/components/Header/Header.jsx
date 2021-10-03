@@ -22,6 +22,10 @@ const Header = (props) => {
     history.push("/login")
   }
 
+  const goToPage = () => {
+    history.push("/help")
+  }
+
   return (
     <header className={headerStyles.container}>
       <div className={headerStyles.containerTwo}>
@@ -45,7 +49,7 @@ const Header = (props) => {
           />
           <div className={headerStyles.notification}><p>23</p></div>
         </div>
-        <div className={`${headerStyles.containerFour} ${headerStyles.displayNone}`}>
+        <div className={`${headerStyles.containerFour} ${headerStyles.displayNone}`} onClick={goToPage}>
           <img
             alt=""
             src={helpIcon}

@@ -5,7 +5,9 @@ import styles from "./ExamTimeTable.module.css"
 const ExamTimeTable = () => {
   return (
     <div className={styles.container}>
-      ExamTimeTable
+      <div className={styles.timeTable}>
+        <h3>No Content Yet</h3>
+      </div>
     </div>
   )
 }

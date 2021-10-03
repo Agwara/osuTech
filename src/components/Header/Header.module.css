@@ -91,4 +91,9 @@
   .displayNone {
     display: none;
   }
+
+  .currentPath {
+    font-weight: 600;
+    font-size: 16px;
+  }
 }

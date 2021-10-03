@@ -30,14 +30,14 @@ const QuickAccess = (props) => {
       <h3 className={quickAccessStyles.title}>Quick Access</h3>
 
       <ul className={quickAccessStyles.containerTwo}>
-        <li 
+        {/* <li 
           onMouseLeave={() => handleHoverChange("")} 
           onMouseEnter={() => handleHoverChange("email")} 
           className={quickAccessStyles.item}
         >
           {hoverItem === "email" ? <EmailIcon color="#DF8A09" /> : <EmailIcon color="#2D0353" />}
           <p className={quickAccessStyles.name}>Email</p>
-        </li>
+        </li> */}
 
         <li 
           onClick={() => handlePageChange("/time-table")}
@@ -48,31 +48,25 @@ const QuickAccess = (props) => {
           {hoverItem === "timetable" ? <TimetbleIcon color="#DF8A09" /> : <TimetbleIcon color="#2D0353" />}
           <p className={quickAccessStyles.name}>Time Table</p>
         </li>
-        <li 
+        {/* <li 
           onMouseLeave={() => handleHoverChange("")} 
           onMouseEnter={() => handleHoverChange("library")} 
           className={quickAccessStyles.item}
         >
           {hoverItem === "library" ? <LibraryIcon color="#DF8A09" /> : <LibraryIcon color="#2D0353" />}
           <p className={quickAccessStyles.name}>Library</p>
-        </li>
-        <li 
-          onMouseLeave={() => handleHoverChange("")} 
-          onMouseEnter={() => handleHoverChange("media")} 
-          className={quickAccessStyles.item}
-        >
-          {hoverItem === "media" ? <SocialMediaicon color="#DF8A09" /> : <SocialMediaicon color="#2D0353" />}
-          <p className={quickAccessStyles.name}>Social Media</p>
-        </li>
-        <li 
+        </li> */}
+
+        {/* <li 
           onMouseLeave={() => handleHoverChange("")} 
           onMouseEnter={() => handleHoverChange("news")} 
           className={quickAccessStyles.item}
         >
           {hoverItem === "news" ? <NewsIcon color="#DF8A09" /> : <NewsIcon color="#2D0353" />}
           <p className={quickAccessStyles.name}>News</p>
-        </li>
+        </li> */}
         <li 
+          onClick={() => handlePageChange("/student-union")}
           onMouseLeave={() => handleHoverChange("")} 
           onMouseEnter={() => handleHoverChange("union")} 
           className={quickAccessStyles.item}
@@ -98,6 +92,15 @@ const QuickAccess = (props) => {
         >
           {hoverItem === "help" ? <HelpIcon color="#DF8A09" /> : <HelpIcon color="#2D0353" />}
           <p className={quickAccessStyles.name}>Help</p>
+        </li>
+
+        <li 
+          onMouseLeave={() => handleHoverChange("")} 
+          onMouseEnter={() => handleHoverChange("media")} 
+          className={quickAccessStyles.item}
+        >
+          {hoverItem === "media" ? <SocialMediaicon color="#DF8A09" /> : <SocialMediaicon color="#2D0353" />}
+          <p className={quickAccessStyles.name}>Social Media</p>
         </li>
       </ul>
     </div>
