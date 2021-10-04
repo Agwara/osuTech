@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 
 import Dashboard from "../pages/Dashboard/Dashboard"
 import Document from "../pages/Document/Document"
+import EditProfile from "../pages/EditProfile/EditProfile"
 import GPA from "../pages/GPA/GPA"
 import Help from "../pages/Help/Help"
 import Login from "../pages/Login/Login"
@@ -26,6 +27,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/" component={Dashboard} />
 
         <PrivateRoute exact path="/document" component={Document} />
+
+        <PrivateRoute exact path="/edit-profile" component={EditProfile} />
 
         <PrivateRoute exact path="/gpa" component={GPA} />
 

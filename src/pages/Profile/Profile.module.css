@@ -4,3 +4,27 @@
 
   padding: 20px;
 }
+
+.containerTwo {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+  grid-template-rows: minmax(500px, min-content);
+  gap: 10px;
+}
+
+.profile {
+  height: 100%;
+}
+
+.calendar {
+  background-color: #fafafa;
+  height: 100%;
+}
+
+@media screen and (max-width: 1100px) {
+  .containerTwo {
+    grid-template-columns: 1fr;
+    grid-template-rows: 400px 200px;
+  }
+}
