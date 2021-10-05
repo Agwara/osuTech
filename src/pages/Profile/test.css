@@ -1,0 +1,19 @@
+.react-calendar {
+  width: 90% !important;
+  min-width: 220px;
+  background: #fafafa !important;
+  border-radius: 6px;
+  margin: unset;
+}
+
+.react-calendar__navigation {
+  height: 40px;
+  margin-bottom: 1em;
+  background-color: rosybrown;
+}
+
+@media screen and (max-width: 300px) {
+  .react-calendar {
+    width: 100% !important;
+  }
+}

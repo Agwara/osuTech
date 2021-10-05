@@ -27,8 +27,21 @@
 
 .calendar {
   min-height: 280px;
-  background-color: #f3e2e2;
+  background-color: #fafafa;
   border-radius: 6px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendarContainer {
+  width: 80%;
+  height: 250px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gpa {
@@ -41,7 +54,18 @@
   justify-content: space-around;
   row-gap: 5px;
 
-  padding: 10px 0px 10px 20px;
+  padding: 20px;
+}
+
+.chartContainer {
+  width: 135px;
+  height: 150px;
+
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .gpa h3 {
@@ -56,13 +80,14 @@
 .gpa p {
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 150%;
   color: #505050;
 }
 
 .gpa p span {
   color: #219653;
+  font-weight: 500;
 }
 
 .containerThree {
@@ -79,21 +104,23 @@
   }
 
   .calendarGPA {
+    width: 100%;
     flex-direction: row-reverse;
     column-gap: 10px;
     justify-content: space-between;
   }
 
   .gpa {
-    width: 250px;
+    width: 400px;
   }
 
   .calendar {
     flex-grow: 1;
+    width: 100%;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 950px) {
   .calendarGPA {
     flex-direction: column-reverse;
   }
@@ -107,3 +134,18 @@
     width: 100%;
   }
 }
+
+/* @media screen and (max-width: 600px) {
+  .calendarGPA {
+    flex-direction: column-reverse;
+  }
+
+  .gpa {
+    width: 100%;
+    min-height: 180px;
+  }
+
+  .calendar {
+    width: 100%;
+  }
+} */

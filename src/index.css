@@ -24,12 +24,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-/* .hideScrollBar::-webkit-scrollbar {
-  display: none;
-} */
-
-/* .hideScrollBar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-} */
