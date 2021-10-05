@@ -59,12 +59,6 @@
   text-transform: capitalize;
 }
 
-.mainDetails {
-  flex-grow: 1;
-  background-color: #fafafa;
-  border-radius: 8px;
-}
-
 .editBtn {
   background: #ffffff;
 
@@ -76,6 +70,38 @@
   font-size: 16px;
   padding: 10px 20px;
   cursor: pointer;
+}
+
+.mainDetails {
+  flex-grow: 1;
+  background-color: #fafafa;
+  border-radius: 8px;
+
+  padding: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detailText {
+  margin-bottom: 10px;
+}
+
+.title {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+
+  color: #b4b1b1;
+}
+
+.titleValue {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+
+  color: #505050;
 }
 
 @media screen and (max-width: 600px) {
