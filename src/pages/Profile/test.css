@@ -6,12 +6,6 @@
   margin: unset;
 }
 
-.react-calendar__navigation {
-  height: 40px;
-  margin-bottom: 1em;
-  background-color: rosybrown;
-}
-
 @media screen and (max-width: 300px) {
   .react-calendar {
     width: 100% !important;
