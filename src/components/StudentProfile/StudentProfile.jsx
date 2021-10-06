@@ -17,10 +17,11 @@ const data = {
   "address": "Block 23A, Ixtapa Avenue, Mexico"
 }
 
-const StudentProfile = () => {
+const StudentProfile = (props) => {
   const history = useHistory()
 
   const goToEdit = () => {
+    props.setStartToggle(false)
     history.push("/edit-profile")
   }
   return (
@@ -62,11 +63,11 @@ const StudentProfile = () => {
           <p className={styles.titleValue}>{data["email"]}</p>
         </div>
         <div className={styles.detailText}>
-          <span className={styles.title}>Phone Number</span>
+          <span className={styles.title}>Phone number</span>
           <p className={styles.titleValue}>{data["phone"]}</p>
         </div>
         <div className={styles.detailText}>
-          <span className={styles.title}>Parent Phone Number</span>
+          <span className={styles.title}>Parent phone number</span>
           <p className={styles.titleValue}>{data["parentPhone"]}</p>
         </div>
         <div className={styles.detailText}>

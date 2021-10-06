@@ -13,7 +13,7 @@ import 'react-calendar/dist/Calendar.css';
 import "./test.css"
 
 
-const Profile = () => {
+const Profile = (props) => {
   const [value, onChange] = useState(new Date());
 
   let data = {
@@ -65,7 +65,7 @@ const Profile = () => {
       <div className={profileStyles.containerTwo}>
 
         <div className={profileStyles.profile}>
-          <StudentProfile/>
+          <StudentProfile setStartToggle={props.setStartToggle} />
         </div>
 
         <div className={profileStyles.calendarGPA}>
@@ -80,7 +80,7 @@ const Profile = () => {
           </div>
           
           <div className={profileStyles.gpa}>
-            <h3>Current CCGPA</h3>
+            <h3>Current CGPA</h3>
             <div className={profileStyles.containerThree}>
               <p>Remark<br/> <span>Good standing</span></p>
 
