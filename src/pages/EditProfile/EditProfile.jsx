@@ -8,7 +8,7 @@ import styles from "./EditProfile.module.css"
 
 
 const EditProfile = () => {
-  const [editNav, setEditNav] = useState("profile")
+  const [editNav, setEditNav] = useState("media")
 
   const handleNavChange = (params) => {
     setEditNav(params)
