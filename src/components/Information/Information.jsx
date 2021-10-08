@@ -3,6 +3,7 @@ import React from "react"
 import informationStyles from "./Information.module.css"
 
 const Information = () => {
+
   return (
     <div className={informationStyles.container}>
       <p className={informationStyles.text}>

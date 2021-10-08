@@ -1,5 +1,7 @@
-import React from "react"
+import React, {useState, useReducer} from "react"
 import {useHistory} from "react-router-dom"
+
+import reducer from "./sideBarReducer"
 
 import crossIcon from "../../assets/sidebarIcons/cross-mark.svg"
 import DashboardIcon from "../../assets/sidebarIcons/dashboard"
@@ -9,13 +11,65 @@ import Registration from "../../assets/sidebarIcons/registration"
 import PrintOutIcon from "../../assets/sidebarIcons/print"
 import GpaIcon from "../../assets/sidebarIcons/gpa"
 import DocumentIcon from "../../assets/sidebarIcons/document"
+import RightArrow from "../../assets/sidebarIcons/rightArrow"
 import sidebarStyles from "./SideBar.module.css"
 
 import helpIcon from "../../assets/sidebarIcons/help.svg"
 import logoutIcon from "../../assets/sidebarIcons/logout.svg"
 
+const initialState = {
+  openResultDropDown: false,
+  openRegDropDown: false,
+  openPrintDropDown: false,
+  openGpaDropDown: false,
+  openDocDropDown: false,
+  useMainUrl: true
+}
 
 const SideBar = (props) => {
+  const [sideBarState, dispatch] = useReducer(reducer, initialState)
+
+  const toggleResultDropDown = () => {
+    dispatch({
+      type: "OPEN_RESULT_DROP_DOWN",
+      payload: !sideBarState.openResultDropDown,
+      useMain: !sideBarState.openResultDropDown ? false : true
+    })
+  }
+
+  const toggleRegDropDown = () => {
+    dispatch({
+      type: "OPEN_REG_DROP_DOWN",
+      payload: !sideBarState.openRegDropDown,
+      useMain: !sideBarState.openRegDropDown ? false : true
+    })
+  }
+
+  const togglePrintDropDown = () => {
+    dispatch({
+      type: "OPEN_PRINT_DROP_DOWN",
+      payload: !sideBarState.openPrintDropDown,
+      useMain: !sideBarState.openPrintDropDown ? false : true
+    })
+  }
+
+  const toggleGpaDropDown = () => {
+    dispatch({
+      type: "OPEN_GPA_DROP_DOWN",
+      payload: !sideBarState.openGpaDropDown,
+      useMain: !sideBarState.openGpaDropDown ? false : true
+    })
+  }
+
+  const toggleDocDropDown = () => {
+    dispatch({
+      type: "OPEN_DOC_DROP_DOWN",
+      payload: !sideBarState.openDocDropDown,
+      useMain: !sideBarState.openDocDropDown ? false : true
+    })
+  }
+
+
   const history = useHistory()
 
   const handleToggle = () => {
@@ -33,10 +87,6 @@ const SideBar = (props) => {
     history.push("/login")
   }
 
-  const goToHelpPage = () => {
-    history.push("/help")
-  }
-
   return (
     <div className={sidebarStyles.container}>
       <div className={sidebarStyles.containerTwo}>
@@ -51,78 +101,142 @@ const SideBar = (props) => {
 
       <ul className={sidebarStyles.nav}>
         <li 
-          className={history.location.pathname === "/" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/" && sideBarState.useMainUrl ? sidebarStyles.active : sidebarStyles.inactive}
           onClick={() => handleUrlChange("")}
         >
           {
-            history.location.pathname === "/" ? <DashboardIcon color={"#DF8A09"}/> : <DashboardIcon color={"white"} />
+            history.location.pathname === "/" && sideBarState.useMainUrl ? <DashboardIcon color={"#DF8A09"}/> : <DashboardIcon color={"white"} />
           }
           <p>Dashboard</p>
         </li>
 
         <li 
           onClick={() => handleUrlChange("profile")}
-          className={history.location.pathname === "/profile" ? sidebarStyles.active : sidebarStyles.inactive}
+          className={history.location.pathname === "/profile" && sideBarState.useMainUrl ? sidebarStyles.active : sidebarStyles.inactive}
         >
           {
-            history.location.pathname === "/profile" ? <ProfileIcon color={"#DF8A09"}/> : <ProfileIcon color={"white"} />
+            history.location.pathname === "/profile" && sideBarState.useMainUrl ? <ProfileIcon color={"#DF8A09"}/> : <ProfileIcon color={"white"} />
           }
           <p>Profile</p>
         </li>
 
         <li 
-          onClick={() => handleUrlChange("result")}
-          className={history.location.pathname === "/result" ? sidebarStyles.active : sidebarStyles.inactive}
+          onClick={toggleResultDropDown}
+          className={sidebarStyles.itemContainer}
         >
-          {
-            history.location.pathname === "/result" ? <ResultIcon color={"#DF8A09"}/> : <ResultIcon color={"white"} />
-          }
-          <p>Result</p>
+          <div className={sideBarState.openResultDropDown ? sidebarStyles.active : sidebarStyles.inactive}>
+            {
+              sideBarState.openResultDropDown ? <ResultIcon color={"#DF8A09"}/> : <ResultIcon color={"white"} />
+            }
+            <p>Result</p>
+
+            <div className={sidebarStyles.rightArrow}>
+              {sideBarState.openResultDropDown ? <RightArrow color={"#DF8A09"}/> : <RightArrow color={"white"} />}
+            </div>
+          </div>
+
+          <div className={sideBarState.openResultDropDown ? sidebarStyles.test : sidebarStyles.close}>
+            <div className={sidebarStyles.testInner}>
+              <p onClick={() => handleUrlChange("result")} className={sidebarStyles.innerLinkText}>Result</p>
+              <p className={sidebarStyles.innerLinkText}>Oustanding</p>
+            </div>
+          </div>
         </li>
 
         <li 
-          onClick={() => handleUrlChange("registration")}
-          className={history.location.pathname === "/registration" ? sidebarStyles.active : sidebarStyles.inactive}
+          onClick={toggleRegDropDown}
+          className={sidebarStyles.itemContainer}
         >
-          {
-            history.location.pathname === "/registration" ? <Registration color={"#DF8A09"}/> : <Registration color={"white"} />
-          }
-          <p>Course Registration</p>
+          <div className={sideBarState.openRegDropDown ? sidebarStyles.active : sidebarStyles.inactive}>
+            {
+              sideBarState.openRegDropDown ? <Registration color={"#DF8A09"}/> : <Registration color={"white"} />
+            }
+            <p>Course Registration</p>
+
+            <div className={sidebarStyles.rightArrow}>
+              {sideBarState.openRegDropDown ? <RightArrow color={"#DF8A09"}/> : <RightArrow color={"white"} />}
+            </div>
+          </div>
+
+          <div className={sideBarState.openRegDropDown ? sidebarStyles.test : sidebarStyles.close}>
+            <div className={sidebarStyles.testInner}>
+              <p onClick={() => handleUrlChange("registration")} className={sidebarStyles.innerLinkText}>Selected course</p>
+              <p className={sidebarStyles.innerLinkText}>Course form</p>
+            </div>
+          </div>
         </li>
 
         <li 
-          onClick={() => handleUrlChange("print")}
-          className={history.location.pathname === "/print" ? sidebarStyles.active : sidebarStyles.inactive}
+          onClick={togglePrintDropDown}
+          className={sidebarStyles.itemContainer}
         >
-          {
-            history.location.pathname === "/print" ? <PrintOutIcon color={"#DF8A09"}/> : <PrintOutIcon color={"white"} />
-          }
-          <p>Print Out</p>
+          <div className={sideBarState.openPrintDropDown ? sidebarStyles.active : sidebarStyles.inactive}>
+            {
+              sideBarState.openPrintDropDown ? <PrintOutIcon color={"#DF8A09"}/> : <PrintOutIcon color={"white"} />
+            }
+            <p>Print Out</p>
+            <div className={sidebarStyles.rightArrow}>
+              {sideBarState.openPrintDropDown ? <RightArrow color={"#DF8A09"}/> : <RightArrow color={"white"} />}
+            </div>
+          </div>
+
+          <div className={sideBarState.openPrintDropDown ? sidebarStyles.test : sidebarStyles.close}>
+            <div className={sidebarStyles.testInner}>
+              <p onClick={() => handleUrlChange("print")} className={sidebarStyles.innerLinkText}>Current semester</p>
+              <p className={sidebarStyles.innerLinkText}>Previous semester</p>
+            </div>
+          </div>
         </li>
 
         <li 
-          onClick={() => handleUrlChange("gpa")}
-          className={history.location.pathname === "/gpa" ? sidebarStyles.active : sidebarStyles.inactive}
+          onClick={toggleGpaDropDown}
+          className={sidebarStyles.itemContainer}
         >
-          {
-            history.location.pathname === "/gpa" ? <GpaIcon color={"#DF8A09"}/> : <GpaIcon color={"white"} />
-          }
-          <p>Gpa</p>
+          <div className={sideBarState.openGpaDropDown ? sidebarStyles.active : sidebarStyles.inactive}>
+            {
+              sideBarState.openGpaDropDown ? <GpaIcon color={"#DF8A09"}/> : <GpaIcon color={"white"} />
+            }
+            <p>Gpa Tool</p>
+
+            <div className={sidebarStyles.rightArrow}>
+              {sideBarState.openGpaDropDown ? <RightArrow color={"#DF8A09"}/> : <RightArrow color={"white"} />}
+            </div>
+          </div>
+
+          <div className={sideBarState.openGpaDropDown ? sidebarStyles.testGpa : sidebarStyles.close}>
+            <div className={sidebarStyles.testInner}>
+              <p className={sidebarStyles.innerLinkText}>GPA calculator</p>
+              <p className={sidebarStyles.innerLinkText}>GPA goal setter</p>
+              <p className={sidebarStyles.innerLinkText}>GPA forcaster</p>
+            </div>
+          </div>
         </li>
 
         <li 
-          onClick={() => handleUrlChange("document")}
-          className={history.location.pathname === "/document" ? sidebarStyles.active : sidebarStyles.inactive}
+          onClick={toggleDocDropDown}
+          className={sidebarStyles.itemContainer}
         >
-          {
-            history.location.pathname === "/document" ? <DocumentIcon color={"#DF8A09"}/> : <DocumentIcon color={"white"} />
-          }
-          <p>Document</p>
+          <div className={sideBarState.openDocDropDown ? sidebarStyles.active : sidebarStyles.inactive}>
+            {
+              sideBarState.openDocDropDown ? <DocumentIcon color={"#DF8A09"}/> : <DocumentIcon color={"white"} />
+            }
+            <p>Document</p>
+            <div className={sidebarStyles.rightArrow}>
+            {sideBarState.openDocDropDown ? <RightArrow color={"#DF8A09"}/> : <RightArrow color={"white"} />}
+          </div>
+          </div>
+
+          <div className={sideBarState.openDocDropDown ? sidebarStyles.test : sidebarStyles.close}>
+            <div className={sidebarStyles.testInner}>
+              <p className={sidebarStyles.innerLinkText}>Course document</p>
+              <p className={sidebarStyles.innerLinkText}>Upload</p>
+            </div>
+          </div>
         </li>
       </ul>
 
       <div className={sidebarStyles.containerThree}>
-        <div className={sidebarStyles.helpContainer} onClick={goToHelpPage}>
+        <div className={sidebarStyles.helpContainer} onClick={() => handleUrlChange("help")}>
           <img
             alt=""
             src={helpIcon} 

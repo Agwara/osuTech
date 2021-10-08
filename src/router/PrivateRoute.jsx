@@ -14,6 +14,7 @@ const PrivateRoute = ({
 
 	const [openSideBar, setOpenSideBar] = useState(false)
 	const [startToggle, setStartToggle] = useState(false)
+	
 	const windowWidth = useWindowWidth()
 
 	return (
