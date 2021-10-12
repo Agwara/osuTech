@@ -33,6 +33,7 @@ const Header = (props) => {
           windowWidth < 800 ? <img alt="" src={barIcon} onClick={handleToggle} className={headerStyles.bar} /> : <div></div>
         }
         <h3 className={headerStyles.currentPath}>
+          {/* If things get complicated, use a switch statement to handle this. */}
           {
             history.location.pathname.length >= 2 ? history.location.pathname.split("").splice(1,).join("") : "Dashboard"
           }

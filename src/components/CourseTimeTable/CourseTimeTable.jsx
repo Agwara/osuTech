@@ -60,33 +60,6 @@ const CourseTimeTable = () => {
             }
           })
         }
-        {/* {
-          generatePosition().map((obj, i) => {
-            let startRow = Number(obj["row"])
-            let endRow = startRow + Number(obj["duration"])
-
-            let startColumn = Number(obj["column"])
-            let endColumn = startColumn + 1
-            return (
-              <div 
-                key={`${obj["course"]} ${i}`}
-                style={
-                  {
-                    gridColumn: `${Number(startColumn)}/${Number(endColumn)}`,
-                    gridRow: `${Number(startRow)}/${(Number(endRow))}`
-                  }
-                }
-                className={styles.coursePos}
-              
-              >
-                <p>{obj["course"]}</p>
-                <p>{startColumn}</p>
-                <p>{startRow}</p>
-                <p>{obj["day"]}</p>
-              </div>
-            )
-          })
-        } */}
       </div>
     )
   }

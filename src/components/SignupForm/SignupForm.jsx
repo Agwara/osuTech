@@ -8,7 +8,7 @@ import signupFormStyles from "./SignupForm.module.css"
 
 import starIcon from "../../assets/otherIcons/greenStar.svg"
 
-const countryList = ["Ghana", "Nigeria", "Zimbabwe"]
+const countryList = ["Ghana", "Nigeria", "Zimbabwe", "Cameroon", "Ethopia"]
 const religionList = ["Christainity", "Islam", "Atheism", "Judaism"]
 
 const SignupForm = () => {

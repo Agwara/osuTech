@@ -1,4 +1,4 @@
-import React, {useState, useReducer} from "react"
+import React, {useReducer} from "react"
 import {useHistory} from "react-router-dom"
 
 import reducer from "./sideBarReducer"
@@ -87,6 +87,13 @@ const SideBar = (props) => {
     history.push("/login")
   }
 
+  const stopPropagation = (e, url) => {
+    e.stopPropagation() 
+    if (url) {
+      handleUrlChange(url)
+    }
+  }
+
   return (
     <div className={sidebarStyles.container}>
       <div className={sidebarStyles.containerTwo}>
@@ -100,8 +107,7 @@ const SideBar = (props) => {
       </div>
 
       <ul className={sidebarStyles.nav}>
-        <li 
-          className={history.location.pathname === "/" && sideBarState.useMainUrl ? sidebarStyles.active : sidebarStyles.inactive}
+        <li           className={history.location.pathname === "/" && sideBarState.useMainUrl ? sidebarStyles.active : sidebarStyles.inactive}
           onClick={() => handleUrlChange("")}
         >
           {
@@ -137,8 +143,13 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openResultDropDown ? sidebarStyles.test : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p onClick={() => handleUrlChange("result")} className={sidebarStyles.innerLinkText}>Result</p>
-              <p className={sidebarStyles.innerLinkText}>Oustanding</p>
+              <p 
+                onClick={(e) => stopPropagation(e, "result")} 
+                className={sidebarStyles.innerLinkText}
+              >
+                Result
+              </p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Oustanding</p>
             </div>
           </div>
         </li>
@@ -160,8 +171,8 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openRegDropDown ? sidebarStyles.test : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p onClick={() => handleUrlChange("registration")} className={sidebarStyles.innerLinkText}>Selected course</p>
-              <p className={sidebarStyles.innerLinkText}>Course form</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Selected course</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Course form</p>
             </div>
           </div>
         </li>
@@ -182,8 +193,8 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openPrintDropDown ? sidebarStyles.test : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p onClick={() => handleUrlChange("print")} className={sidebarStyles.innerLinkText}>Current semester</p>
-              <p className={sidebarStyles.innerLinkText}>Previous semester</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Current semester</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Previous semester</p>
             </div>
           </div>
         </li>
@@ -205,9 +216,9 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openGpaDropDown ? sidebarStyles.testGpa : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p className={sidebarStyles.innerLinkText}>GPA calculator</p>
-              <p className={sidebarStyles.innerLinkText}>GPA goal setter</p>
-              <p className={sidebarStyles.innerLinkText}>GPA forcaster</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>GPA calculator</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>GPA goal setter</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>GPA forcaster</p>
             </div>
           </div>
         </li>
@@ -228,8 +239,8 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openDocDropDown ? sidebarStyles.test : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p className={sidebarStyles.innerLinkText}>Course document</p>
-              <p className={sidebarStyles.innerLinkText}>Upload</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Course document</p>
+              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Upload</p>
             </div>
           </div>
         </li>

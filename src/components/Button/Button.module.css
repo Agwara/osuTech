@@ -13,4 +13,9 @@
   color: #ffffff;
 
   cursor: pointer;
+  transition: all 0.4s;
+}
+
+.btn:hover {
+  background-color: #6306b4;
 }
