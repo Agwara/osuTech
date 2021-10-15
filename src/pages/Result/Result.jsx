@@ -20,11 +20,6 @@ const Result = () => {
   const [resultState, dispatch] = useReducer(reducer, initialState)
 
   const [mounted, setMounted] = useState(true)
-  
-  // const [fetchResultState, setFetchResultState] = useState("loading")
-  // const [startFetch, setStartFetch] = useState(false)
-
-  // const [fetchedCourses, setFetchCourses] = useState([])
 
   const fakeAxios = () => {
     if (mounted) {

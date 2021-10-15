@@ -37,7 +37,7 @@ const AppRouter = () => {
 
         <Route exact path="/login" component={Login} />
 
-        <PrivateRoute exact path="/oustanding-result" component={OustandingResult} />
+        <PrivateRoute exact path="/outstanding-result" component={OustandingResult} />
 
         <PrivateRoute exact path="/print" component={PrintOut} />
 

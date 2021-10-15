@@ -150,7 +150,7 @@ const SideBar = (props) => {
                 Result
               </p>
               <p 
-                onClick={(e) => stopPropagation(e, "oustanding-result")} 
+                onClick={(e) => stopPropagation(e, "outstanding-result")} 
                 className={sidebarStyles.innerLinkText}
               >
                 Oustanding
