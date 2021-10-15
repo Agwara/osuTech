@@ -1,5 +1,6 @@
 import React from "react"
 
+import ResultItem from "./ResultItem"
 import styles from "./GetResult.module.css"
 
 const GetResult = (props) => {
@@ -15,7 +16,25 @@ const GetResult = (props) => {
     } else if ((props.fetchResultState === "loaded") && props.fetchedCourses.length > 0) {
       return (
         <div className={styles.resultItems}>
-          Result Items
+          {
+            props.studentCourses["courses"].map((course, i) => {
+              if (((i + 1) % 2) === 0) {
+                return <ResultItem key={`${i}`} bg="#FAFAFA" course={course} />
+              } else {
+                return <ResultItem key={`${i}`} bg="#FFFFFF" course={course} />
+              }
+            })
+          }
+          <div className={styles.resultTotals}>
+            <p className={styles.resultTotalsText}>Total Unit</p>
+            <p style={{gridColumn: "4/5"}} className={styles.resultTotalsText}>{props.studentCourses["totalUnits"]}</p>
+            <p style={{gridColumn: "7/8"}} className={styles.resultTotalsText}>{props.studentCourses["totalPoints"]}</p>
+          </div>
+
+          <div className={styles.resultGpa}>
+            <p className={styles.resultTotalsText}>GPA</p>
+            <p style={{gridColumn: "4/5"}} className={styles.resultTotalsText}>{props.studentCourses["gpa"]}</p>
+          </div>
         </div>
       )
     }

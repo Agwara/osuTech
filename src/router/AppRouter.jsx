@@ -7,6 +7,7 @@ import EditProfile from "../pages/EditProfile/EditProfile"
 import GPA from "../pages/GPA/GPA"
 import Help from "../pages/Help/Help"
 import Login from "../pages/Login/Login"
+import OustandingResult from "../pages/OutstandingResult/OustandingResult"
 import PageNotFound from "../pages/PageNotFound/PageNotFound"
 import PrintOut from "../pages/PrintOut/PrintOut"
 import Profile from "../pages/Profile/Profile" 
@@ -35,6 +36,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/help" component={Help} />
 
         <Route exact path="/login" component={Login} />
+
+        <PrivateRoute exact path="/oustanding-result" component={OustandingResult} />
 
         <PrivateRoute exact path="/print" component={PrintOut} />
 

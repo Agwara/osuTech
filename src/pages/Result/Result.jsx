@@ -30,7 +30,7 @@ const Result = () => {
     if (mounted) {
       dispatch({
         type: "FETCH_COMPLETE",
-        payload: [...studentCourses]
+        payload: [...studentCourses["courses"]]
       })
     }
   }
@@ -84,6 +84,7 @@ const Result = () => {
       {
         resultState.startFetch ? 
           <GetResult 
+            studentCourses={studentCourses}
             fetchResultState={resultState.fetchState}
             fetchedCourses={resultState.fetchCourses}
           /> : 
@@ -94,159 +95,103 @@ const Result = () => {
 }
 
 export default Result;
-const studentCourses = [
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
+const studentCourses = {
+  "totalPoints": 120,
+  "totalUnits": 20,
+  "gpa": 4.25,
+  "courses": [
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
 
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
 
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
 
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
 
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
 
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
 
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
 
-  {
-    "totalPoints": 120,
-    "totalUnits": 20,
-    "gpa": 4.25,
-    "courses": [
-      {
-        "courseCode": "STA 101",
-        "department": "Statistics",
-        "courseTitle": "Introduction to statistics and maths",
-        "unit": 4,
-        "score": 60,
-        "grade": "B",
-        "point": 16
-      }
-    ]
-  },
-]
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    },
+
+    {
+      "courseCode": "STA 101",
+      "department": "Statistics",
+      "courseTitle": "Introduction to statistics and maths",
+      "unit": 4,
+      "score": 60,
+      "grade": "B",
+      "point": 16
+    }
+  ]
+}
+
 
 const availableSemesters = [
   "First Semester 2019 (100 Lvl)",
