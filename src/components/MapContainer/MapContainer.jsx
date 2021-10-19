@@ -16,6 +16,13 @@ const MapContainer = () => {
 
   const zoom = 18
 
+  function test () {
+    console.log(process.env)
+    console.log(process.env.REACT_APP_GOOGLE_API_KEY)
+  }
+
+  test()
+
   return (
     <div className={styles.container}>
       <GoogleMapReact
