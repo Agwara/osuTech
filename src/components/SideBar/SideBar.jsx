@@ -176,8 +176,8 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openRegDropDown ? sidebarStyles.test : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Selected course</p>
-              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Course form</p>
+              <p onClick={(e) => stopPropagation(e, "registration/select-course")} className={sidebarStyles.innerLinkText}>Selected course</p>
+              <p onClick={(e) => stopPropagation(e, "registration/course-form")} className={sidebarStyles.innerLinkText}>Course form</p>
             </div>
           </div>
         </li>

@@ -1,18 +1,18 @@
-import React, { useState, useEffect } from "react"
-
-import ResultItem from "./ResultItem"
+import React, {useState, useEffect} from "react"
 
 import styles from "./styles.module.css"
 
-const GetOutstanding = () => {
+const SelectedCourse = (props) => {
   const [loadingState, setLoadingState] = useState("loading")
 
   const [mounted, setMounted] = useState(true)
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoadingState("success")
-    }, 2000)
+    if (mounted) {
+      setTimeout(() => {
+        setLoadingState("success")
+      }, 2000)
+    }
 
     return () => {
       setMounted(false)
@@ -36,7 +36,7 @@ const GetOutstanding = () => {
     } else if (loadingState === "success") {
       return (
         <div className={styles.resultItems}>
-          { 
+          {/* { 
             studentCourses.map((course, i) => {
               if (((i + 1) % 2) === 0) {
                 return <ResultItem key={`${i}`} bg="#FAFAFA" course={course} />
@@ -44,7 +44,7 @@ const GetOutstanding = () => {
                 return <ResultItem key={`${i}`} bg="#FFFFFF" course={course} />
               }
             })
-          }
+          } */}
         </div>
 
       )
@@ -59,18 +59,17 @@ const GetOutstanding = () => {
           <p className={styles.tableHeaderText}>Department</p>
           <p className={styles.tableHeaderText}>Course Title</p>
           <p className={styles.tableHeaderText}>Unit</p>
-          <p className={styles.tableHeaderText}>Grade</p>
           <p className={styles.tableHeaderText}>Semester</p>
           <p className={styles.tableHeaderText}>Level</p>
         </div>
-
+        
         {renderUiState()}
       </div>
     </div>
   )
 }
 
-export default GetOutstanding
+export default SelectedCourse
 
 const studentCourses = [
   {
@@ -79,7 +78,6 @@ const studentCourses = [
     "courseTitle": "Introduction to statistics and maths",
     "unit": 4,
     "semester": "First",
-    "grade": "F",
     "level": 100
   },
 
@@ -89,7 +87,6 @@ const studentCourses = [
     "courseTitle": "Introduction to biology",
     "unit": 3,
     "semester": "First",
-    "grade": "F",
     "level": 100
   },
 
@@ -99,7 +96,6 @@ const studentCourses = [
     "courseTitle": "Introduction to chemistry",
     "unit": 4,
     "semester": "First",
-    "grade": "F",
     "level": 100
   },
 
@@ -109,7 +105,6 @@ const studentCourses = [
     "courseTitle": "Introduction to biology",
     "unit": 3,
     "semester": "First",
-    "grade": "F",
     "level": 100
   },
 
@@ -119,7 +114,33 @@ const studentCourses = [
     "courseTitle": "Introduction to chemistry",
     "unit": 4,
     "semester": "First",
-    "grade": "F",
+    "level": 100
+  },
+
+  {
+    "courseCode": "CHM 101",
+    "department": "Chemistry",
+    "courseTitle": "Introduction to chemistry",
+    "unit": 4,
+    "semester": "First",
+    "level": 100
+  },
+
+  {
+    "courseCode": "BIO 101",
+    "department": "Biology",
+    "courseTitle": "Introduction to biology",
+    "unit": 3,
+    "semester": "First",
+    "level": 100
+  },
+
+  {
+    "courseCode": "CHM 101",
+    "department": "Chemistry",
+    "courseTitle": "Introduction to chemistry",
+    "unit": 4,
+    "semester": "First",
     "level": 100
   }
 ]

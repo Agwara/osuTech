@@ -35,7 +35,8 @@ const Header = (props) => {
         <h3 className={headerStyles.currentPath}>
           {/* If things get complicated, use a switch statement to handle this. */}
           {
-            history.location.pathname.length >= 2 ? history.location.pathname.split("").splice(1,).join("") : "Dashboard"
+            // history.location.pathname.length >= 2 ? history.location.pathname.split("").splice(1,).join("") : "Dashboard"
+            history.location.pathname.length >= 2 ? history.location.pathname.split("/")[1] : "Dashboard"
           }
         </h3>
       </div>

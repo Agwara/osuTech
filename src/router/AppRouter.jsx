@@ -43,7 +43,7 @@ const AppRouter = () => {
 
         <PrivateRoute exact path="/profile" component={Profile} />
 
-        <PrivateRoute exact path="/registration" component={Registartion} />
+        <PrivateRoute exact path="/registration/:page" component={Registartion} />
 
         <PrivateRoute exact path="/result" component={Result} />
 

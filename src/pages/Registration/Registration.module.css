@@ -4,3 +4,14 @@
 
   padding: 20px;
 }
+
+.tableTitleText {
+  margin-top: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+
+  color: #2d0353;
+  margin-bottom: 5px;
+}
