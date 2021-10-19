@@ -7,6 +7,8 @@ import library from "../../assets/mapKeys/library.svg"
 import hospital from "../../assets/mapKeys/hospital.svg"
 import styles from "./MapContainer.module.css"
 
+import {REACT_APP_GOOGLE_API_KEY} from "../../keys"
+
 const MapContainer = () => {
 
   const center = {
@@ -19,7 +21,7 @@ const MapContainer = () => {
   return (
     <div className={styles.container}>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: process.env.REACT_APP_GOOGLE_API_KEY}}
+        bootstrapURLKeys={{ key: REACT_APP_GOOGLE_API_KEY}}
         defaultCenter={center}
         defaultZoom={zoom}
       >
