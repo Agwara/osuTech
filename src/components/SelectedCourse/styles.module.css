@@ -65,36 +65,137 @@
   padding-left: 20px;
 }
 
-/* 
-RESULT ITEM SECTION
-*/
-
-.resultItem {
+.totalUnitSection {
   width: 100%;
-  height: 55px;
+  height: 50px;
 
   display: grid;
-  grid-template-columns: 1fr 1fr 1.5fr repeat(3, 0.6fr);
-  align-items: center;
+  grid-template-columns: 1fr 1fr 1.5fr repeat(3, 0.5fr);
   column-gap: 10px;
-  border-bottom: 1px #ccc solid;
+  align-items: center;
 }
 
-.resultItemText {
-  font-style: normal;
-  font-weight: normal;
-  font-size: 14px;
-  line-height: 150%;
-  color: #787878;
+.totalUnitText,
+.totalUnitValue {
+  font-size: 16px;
+  font-weight: 500;
+
+  color: #219653;
 }
 
-.smallPaddingLeft {
-  padding-left: 5px;
+.totalUnitText {
+  grid-column: 1/2;
+  padding-left: 10px;
 }
 
-.grade {
-  color: red;
+.totalUnitValue {
+  grid-column: 4/5;
 }
+
+.courseForm {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  width: 100%;
+  height: 60px;
+  border-top: 1px #ccc solid;
+  padding-right: 10px;
+}
+
+.btnContainer {
+  width: 200px;
+  height: 40px;
+}
+
+
+
+/* MODAL SECTION */
+.modalContainer {
+  position: fixed;
+
+  width: 100vw;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.6);
+
+  top: 0;
+  left: 0;
+
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  align-items: center;
+}
+
+.modalContent {
+  grid-column: 2/3;
+  padding: 25px;
+  width: 350px;
+  height: 200px;
+
+  background-color: white;
+  border-radius: 5px;
+  justify-self: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.noteTitle {
+  color: #505050;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modalText {
+  color: #505050;
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.modalAction {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  width: 100%;
+}
+
+.modalContinue,
+.modalCancel {
+  flex-grow: 1;
+  height: 40px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  cursor: pointer;
+
+  transition: all 0.4s;
+}
+
+.modalCancel {
+  color: #2d0353;
+  border: 1px #ccc solid;
+}
+
+.modalContinue {
+  background: #2d0353;
+  color: white;
+}
+
+.modalContinue:hover {
+  background-color: #6306b4;
+}
+
+.modalCancel:hover {
+  background-color: red;
+  color: white;
+}
+
 
 @keyframes spin {
   0% {
