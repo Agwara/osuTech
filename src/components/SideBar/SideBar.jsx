@@ -244,8 +244,8 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openDocDropDown ? sidebarStyles.test : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Course document</p>
-              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Upload</p>
+              <p onClick={(e) => stopPropagation(e, "document/download")} className={sidebarStyles.innerLinkText}>Course document</p>
+              <p onClick={(e) => stopPropagation(e, "document/upload")} className={sidebarStyles.innerLinkText}>Upload</p>
             </div>
           </div>
         </li>

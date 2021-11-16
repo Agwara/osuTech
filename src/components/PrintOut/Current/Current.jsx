@@ -170,6 +170,16 @@ const registeredCourse = [
     "courseCode": "COE 201",
     "courseTitle": "Principles Of Radar Communications",
     "unit": 4
+  },
+  {
+    "courseCode": "MTH 203",
+    "courseTitle": "Introduction To Ordinary Differential Equation",
+    "unit": 3
+  },
+  {
+    "courseCode": "COE 201",
+    "courseTitle": "Principles Of Radar Communications",
+    "unit": 4
   }
 ]
 

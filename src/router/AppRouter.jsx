@@ -27,7 +27,7 @@ const AppRouter = () => {
       <Switch>
         <PrivateRoute exact path="/" component={Dashboard} />
 
-        <PrivateRoute exact path="/document" component={Document} />
+        <PrivateRoute exact path="/document/:page" component={Document} />
 
         <PrivateRoute exact path="/edit-profile" component={EditProfile} />
 

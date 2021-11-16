@@ -44,6 +44,13 @@
   align-items: center;
 }
 
+.printout {
+  font-size: 36px;
+  line-height: 97%;
+  font-weight: 600;
+  color: #2d0353;
+}
+
 @media screen and (max-width: 900px) {
   .headerTextOne {
     font-size: 20px;
