@@ -1,11 +1,17 @@
-import React from "react"
+import React, {useState} from "react"
 
-import printStyles from "./PrintOut.module.css"
+import Current from "../../components/PrintOut/Current/Current"
+import Previous from "../../components/PrintOut/Previous/Previous"
 
-const PrintOut = () => {
+import styles from "./styles.module.css"
+
+const PrintOut = (props) => {
+  const [printoutPage, setPrintoutPage] = useState(props.match.url.split("/")[2])  
   return (
-    <div className={printStyles.container}>
-      PrintOut
+    <div className={styles.container}>
+      {
+        printoutPage === "current-semester" ? <Current/> : <Previous/>
+      }
     </div>
   )
 }

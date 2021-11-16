@@ -22,15 +22,15 @@ const CourseItem = (props) => {
   }
 
   return (
-    <div style={{backgroundColor: props.bg, color: "red"}} className={styles.courseItem}>
+    <div style={{backgroundColor: props.bg}} className={styles.courseItem}>
       <div className={`${styles.checkboxContainer} ${styles.paddingLeft}`}>
         {
-          itemChecked ? ( props.textColor === "red" ? "" :
-            <div className={styles.checked} onClick={handleRemoveCourse}></div>
+          itemChecked ? ( props.showCheckbox ? <div className={styles.checked} onClick={handleRemoveCourse}></div> :
+            ""
             )
             : 
-            ( props.textColor === "red" ? "" :
-            <div className={styles.unchecked} onClick={handleAddCourse}></div>
+            ( props.showCheckbox ? <div className={styles.unchecked} onClick={handleAddCourse}></div> :
+            ""
             )
         }
         <p style={{color: props.textColor}} className={styles.courseItemText}>{props.course["courseCode"]}</p>

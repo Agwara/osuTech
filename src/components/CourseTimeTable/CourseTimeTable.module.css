@@ -4,9 +4,9 @@
 }
 
 .test {
-  height: 400px;
+  min-height: 400px;
 
-  overflow: scroll;
+  overflow-x: scroll;
 
   scrollbar-width: thin;
   scrollbar-color: #2d0353 #f1f1f1;
@@ -16,6 +16,11 @@
   height: 600px;
   min-width: 1200px;
 }
+
+/* .testTwo {
+  min-height: 500px;
+  max-width: 800px;
+} */
 
 .test::-webkit-scrollbar {
   width: 8px;
@@ -65,7 +70,7 @@
   grid-template-columns: repeat(8, 1fr);
   grid-template-rows: repeat(6, 1fr);
 
-  height: 550px;
+  height: 500px;
 }
 
 .hours {

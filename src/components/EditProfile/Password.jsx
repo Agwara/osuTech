@@ -5,7 +5,7 @@ import TextField from "../InputFields/TextField/TextField"
 import styles from "./Password.module.css"
 
 const Password = () => {
-  const [oldPassword, setOldPassword] = useState("blekSanasa201")
+  const [oldPassword, setOldPassword] = useState("")
   const [newPassword, setNewPassword] = useState("")
   const [reEnter, setReEnter] = useState("")
 

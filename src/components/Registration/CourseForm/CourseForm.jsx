@@ -2,9 +2,11 @@ import React, {useState, useEffect} from "react"
 
 import {useSelector} from "react-redux"
 
-import CourseItem from "../CourseItem/CourseItem"
-import Button from "../Button/Button"
+import CourseItem from "../../CourseItem/CourseItem"
+import Button from "../../Button/Button"
 import Modal from "./Modal"
+
+import printerIcon from "../../../assets/otherIcons/printout.svg"
 
 import styles from "./styles.module.css"
 
@@ -72,6 +74,7 @@ const CourseForm = () => {
                 return <CourseItem 
                   key={`${i}`} bg="#FAFAFA" 
                   course={course} 
+                  showCheckbox={false}
                   textColor="red"
                 />
               } else {
@@ -79,6 +82,7 @@ const CourseForm = () => {
                   key={`${i}`} 
                   bg="#FFFFFF" 
                   course={course}
+                  showCheckbox={false}
                   textColor="red"
                 />
               }
@@ -91,6 +95,7 @@ const CourseForm = () => {
                 return <CourseItem 
                   key={`${i}`} bg="#FAFAFA" 
                   course={course} 
+                  showCheckbox={true}
                   textColor="#787878"
                 />
               } else {
@@ -98,6 +103,7 @@ const CourseForm = () => {
                   key={`${i}`} 
                   bg="#FFFFFF" 
                   course={course}
+                  showCheckbox={true}
                   textColor="#787878"
                 />
               }
@@ -137,6 +143,10 @@ const CourseForm = () => {
           </div>
 
           <div className={styles.printCourse}>
+            <img
+              alt=""
+              src={printerIcon} 
+            />
             <p className={styles.printCourseText}>Print course form</p>
           </div>
         </div>

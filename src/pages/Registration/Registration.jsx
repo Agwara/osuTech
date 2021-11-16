@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 
-import CourseForm from "../../components/CourseForm/CourseForm"
-import SelectedCourse from "../../components/SelectedCourse/SelectedForm"
+import CourseForm from "../../components/Registration/CourseForm/CourseForm"
+import SelectedCourse from "../../components/Registration/SelectedCourse/SelectedForm"
 import Information from "../../components/Information/Information"
 import styles from "./Registration.module.css"
 

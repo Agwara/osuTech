@@ -2,8 +2,8 @@ import React, {useState, useEffect} from "react"
 
 import { useSelector } from 'react-redux'
 
-import CourseItem from "../CourseItem/CourseItem"
-import Button from "../Button/Button"
+import CourseItem from "../../CourseItem/CourseItem"
+import Button from "../../Button/Button"
 import Modal from "./Modal"
 
 import styles from "./styles.module.css"
@@ -57,14 +57,19 @@ const SelectedCourse = (props) => {
             studentCourses.map((course, i) => {
               if (((i + 1) % 2) === 0) {
                 return <CourseItem 
-                  key={`${i}`} bg="#FAFAFA" 
+                  key={`${i}`} 
+                  bg="#FAFAFA" 
                   course={course}
+                  textColor="#787878"
+                  showCheckbox={true}
                 />
               } else {
                 return <CourseItem 
                   key={`${i}`} 
                   bg="#FFFFFF" 
                   course={course}
+                  textColor="#787878"
+                  showCheckbox={true}
                 />
               }
             })

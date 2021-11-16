@@ -3,8 +3,8 @@ import React from "react"
 import {useHistory} from "react-router-dom"
 import {useDispatch} from "react-redux"
 
-import {clearRegisteredCourses} from "../../features/registeredCourses/registeredCourseSlice"
-import successIcon from "../../assets/otherIcons/successPrint.svg"
+import {clearRegisteredCourses} from "../../../features/registeredCourses/registeredCourseSlice"
+import successIcon from "../../../assets/otherIcons/successPrint.svg"
 
 import styles from "./styles.module.css"
 

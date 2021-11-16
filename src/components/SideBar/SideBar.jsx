@@ -198,8 +198,8 @@ const SideBar = (props) => {
 
           <div className={sideBarState.openPrintDropDown ? sidebarStyles.test : sidebarStyles.close}>
             <div className={sidebarStyles.testInner}>
-              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Current semester</p>
-              <p onClick={(e) => stopPropagation(e)} className={sidebarStyles.innerLinkText}>Previous semester</p>
+              <p onClick={(e) => stopPropagation(e, "print-out/current-semester")} className={sidebarStyles.innerLinkText}>Current semester</p>
+              <p onClick={(e) => stopPropagation(e, "print-out/previous-semester")} className={sidebarStyles.innerLinkText}>Previous semester</p>
             </div>
           </div>
         </li>
