@@ -2,7 +2,6 @@ import React, {useState} from "react"
 
 import ExamTimeTable from "../../components/ExamTimeTable/ExamTimeTable"
 import CourseTimeTable from "../../components/CourseTimeTable/CourseTimeTable"
-// import DownloadPDF from "../../components/DowloadPDF/DownloadPdF"
 
 import styles from "./TimeTable.module.css"
 
@@ -32,11 +31,6 @@ const TimeTable = () => {
       <div className={styles.timeTable}>
         {showExam ? <ExamTimeTable /> : <CourseTimeTable />}
         <p className={styles.timeTableText}>NB: Timetable is subjective to change</p>
-
-        {/* <DownloadPDF 
-          downloadFileName="CustomPdf" 
-          rootElementId="courseTimeTable" 
-        /> */}
       </div>
     </div>
   )

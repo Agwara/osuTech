@@ -1,4 +1,5 @@
-import React, {useState, useEffect, useReducer} from "react"
+import React, {useState, useEffect, useReducer, useRef} from "react"
+import { useReactToPrint } from 'react-to-print';
 
 import Header from "../Header/Header"
 import Button from "../../Button/Button"
@@ -18,6 +19,11 @@ const initialState = {
 
 
 const Previous = () => {
+  const componentRef = useRef()
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
   const [selecetedSemester, setSelectedSemester] = useState(availableSemesters[0])
 
   const [resultState, dispatch] = useReducer(reducer, initialState)
@@ -77,31 +83,32 @@ const Previous = () => {
           </div>
         </div>
       </div> 
-
-      {
-        resultState.startFetch ? <h3 className={styles.tableTitleText}>{selecetedSemester}</h3> :  <div></div>
-      }
       
       {
         resultState.startFetch ? 
           <ResultList 
+            selecetedSemester={selecetedSemester}
             studentCourses={studentCourses}
             fetchResultState={resultState.fetchState}
             fetchedCourses={resultState.fetchCourses}
             selecetedSemester={selecetedSemester}
+            ref={componentRef}
           /> : 
           <div></div>
       }
 
-      <div className={styles.btnContainer}>
-        <div className={styles.printBtn}>
-          <img
-            alt=""
-            src={printerIcon} 
-          />
-          <p className={styles.printCourseText}>Print course form</p>
-        </div>
-      </div>
+      {
+        resultState.startFetch ?
+        <div className={styles.btnContainer}>
+          <div className={styles.printBtn} onClick={handlePrint}>
+            <img
+              alt=""
+              src={printerIcon} 
+            />
+            <p className={styles.printCourseText}>Print course form</p>
+          </div>
+        </div> :  <div></div>
+      }
 
     </div>
   )

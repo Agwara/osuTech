@@ -21,9 +21,7 @@ const Current = () => {
 
         <div className={styles.buttons}>
           <button className={`${styles.buttonItems} ${styles.buttonGreyColor}`}>Send mail</button>
-          <button className={`${styles.buttonItems} ${styles.buttonGreyColor}`}>Download PDF</button>
-          <button className={`${styles.buttonItems} ${styles.buttonWhiteColor}`} onClick={handlePrint}>Print</button>
-
+          <button className={`${styles.buttonItems} ${styles.buttonGreyColor}`} onClick={handlePrint}>Download PDF/ Print</button>
         </div>
       </div>
     </div>

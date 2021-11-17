@@ -10,15 +10,6 @@ import AppRouter from "./router/AppRouter"
 
 import * as serviceWorker from "./serviceWorker";
 
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Provider store={store}>
-//       <AppRouter />
-//     </Provider>
-//   </React.StrictMode>, 
-//   document.getElementById("root")
-// );
-
 ReactDOM.render(
   <Provider store={store}>
     <AppRouter />

@@ -1,8 +1,9 @@
-import React, {useState, useEffect} from "react"
+import React, {useState, useEffect, useRef} from "react"
+import { useReactToPrint } from 'react-to-print';
 
 import {useSelector} from "react-redux"
 
-import CourseItem from "../../CourseItem/CourseItem"
+import CourseFormList from "./CourseFormList"
 import Button from "../../Button/Button"
 import Modal from "./Modal"
 
@@ -11,6 +12,12 @@ import printerIcon from "../../../assets/otherIcons/printout.svg"
 import styles from "./styles.module.css"
 
 const CourseForm = () => {
+
+  const componentRef = useRef()
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
+
 
   const [loadingState, setLoadingState] = useState("loading")
 
@@ -51,88 +58,16 @@ const CourseForm = () => {
     setShowModal(true)
   }
 
-  const renderUiState = () => {
-    if (loadingState === "loading") {
-      return (
-        <div className={styles.loadingAnimation}>
-          <h3>Loading Data...</h3>
-          <div className={styles.loader}></div>
-        </div>
-      )
-    } else if (loadingState === "error") {
-      return (
-        <div className={styles.errorInLoading}>
-
-        </div>
-      ) 
-    } else if (loadingState === "success") {
-      return (
-        <div className={styles.resultItems}>
-          {
-            carryOverCourses.map((course, i) => {
-              if (((i + 1) % 2) === 0) {
-                return <CourseItem 
-                  key={`${i}`} bg="#FAFAFA" 
-                  course={course} 
-                  showCheckbox={false}
-                  textColor="red"
-                />
-              } else {
-                return <CourseItem 
-                  key={`${i}`} 
-                  bg="#FFFFFF" 
-                  course={course}
-                  showCheckbox={false}
-                  textColor="red"
-                />
-              }
-            })
-          }
-
-          { 
-            tempCourse.map((course, i) => {
-              if (((i + 1) % 2) === 0) {
-                return <CourseItem 
-                  key={`${i}`} bg="#FAFAFA" 
-                  course={course} 
-                  showCheckbox={true}
-                  textColor="#787878"
-                />
-              } else {
-                return <CourseItem 
-                  key={`${i}`} 
-                  bg="#FFFFFF" 
-                  course={course}
-                  showCheckbox={true}
-                  textColor="#787878"
-                />
-              }
-            })
-          }
-          <div className={styles.totalUnitSection}>
-            <p className={styles.totalUnitText}>Total Unit</p>
-
-            <p className={styles.totalUnitValue}>{totalUnits}</p>
-          </div>
-        </div>
-
-      )
-    }
-  }
-
   return (
     <div className={styles.container}>
       <div className={styles.getResult}>
-        <div className={styles.resultHeader}>
-          <p className={`${styles.tableHeaderText} ${styles.paddingLeft}`}>Course Code</p>
-          <p className={styles.tableHeaderText}>Department</p>
-          <p className={styles.tableHeaderText}>Course Title</p>
-          <p className={styles.tableHeaderText}>Unit</p>
-          <p className={styles.tableHeaderText}>Semester</p>
-          <p className={styles.tableHeaderText}>Level</p>
-        </div>
-        
-        {renderUiState()}
+
+        <CourseFormList 
+          loadingState={loadingState}
+          totalUnits={totalUnits}
+          tempCourse={tempCourse}
+          ref={componentRef}
+        />
 
         <div className={styles.courseForm}>
           <div className={styles.btnContainer}>
@@ -142,7 +77,7 @@ const CourseForm = () => {
             />
           </div>
 
-          <div className={styles.printCourse}>
+          <div className={styles.printCourse} onClick={handlePrint}>
             <img
               alt=""
               src={printerIcon} 

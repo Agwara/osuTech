@@ -47,6 +47,8 @@
   font-size: 14px;
 
   color: #787878;
+
+  transition: all 0.4s;
 }
 
 .buttonWhiteColor {
@@ -54,4 +56,9 @@
 
   color: white;
   background: #2d0353;
+}
+
+.buttonGreyColor:hover {
+  background-color: #c7c5c5;
+  color: #4b4a4a;
 }

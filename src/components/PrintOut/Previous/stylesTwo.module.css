@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  border: 1px #ccc solid;
 }
 
 .getResult {
@@ -8,6 +7,8 @@
   min-height: 400px;
   display: flex;
   flex-direction: column;
+
+  border: 1px #ccc solid;
 }
 
 .loadingAnimation {
@@ -49,6 +50,17 @@
 
   align-content: center;
   column-gap: 10px;
+}
+
+.tableTitleText {
+  margin-top: 30px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 150%;
+
+  color: #2d0353;
+  margin-bottom: 10px;
 }
 
 .tableHeaderText {
@@ -117,7 +129,6 @@ RESULT ITEM SECTION
 
   color: #219653;
 }
-
 
 @keyframes spin {
   0% {
