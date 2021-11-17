@@ -20,8 +20,8 @@ const Current = () => {
         <CourseForm ref={componentRef} />
 
         <div className={styles.buttons}>
-          <button className={`${styles.buttonItems} ${styles.buttonGreyColor}`}>Send mail</button>
-          <button className={`${styles.buttonItems} ${styles.buttonGreyColor}`} onClick={handlePrint}>Download PDF/ Print</button>
+          <button className={`${styles.buttonItems} ${styles.buttonGreyColor}`}>Send to mail</button>
+          <button className={`${styles.buttonItems} ${styles.buttonGreyColor}`} onClick={handlePrint}>Download PDF / Print</button>
         </div>
       </div>
     </div>
