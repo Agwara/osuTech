@@ -113,12 +113,6 @@
   border: none;
 
   cursor: pointer;
-
-  transition: all 0.4s;
-}
-
-.uploadBtn:hover {
-  background-color: #6306b4;
 }
 
 @media screen and (max-width: 500px) {

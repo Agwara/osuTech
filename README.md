@@ -1,3 +1,3 @@
 UNIGIG_FRONTEND
 
-url : https://osutech.herokuapp.com/
+url : https://rakonidemo.herokuapp.com/
