@@ -15,6 +15,10 @@ const LoginForm = () => {
     history.push("/")
   }
 
+  const goToForgotPassword = () => {
+    history.push("/forgot-password")
+  }
+
   return (
     <div className={loginStyles.container}>
       <div className={loginStyles.signupLinkContainer}>
@@ -54,7 +58,7 @@ const LoginForm = () => {
         </div>
 
         <div className={`${loginStyles.forgotPassword} ${loginStyles.formInputWidth}`}>
-          <p>Forgot your password?</p>
+          <p onClick={goToForgotPassword}>Forgot your password?</p>
         </div>
       </div>
     </div>

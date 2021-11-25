@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom"
 import Dashboard from "../pages/Dashboard/Dashboard"
 import Document from "../pages/Document/Document"
 import EditProfile from "../pages/EditProfile/EditProfile"
+import ForgotPasswordPage from "../pages/ForgotPassword/ForgotPassword"
 import GPA from "../pages/GPA/GPA"
 import Help from "../pages/Help/Help"
 import Login from "../pages/Login/Login"
@@ -30,6 +31,8 @@ const AppRouter = () => {
         <PrivateRoute exact path="/document/:page" component={Document} />
 
         <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+
+        <Route path="/forgot-password" component={ForgotPasswordPage} />
 
         <PrivateRoute exact path="/gpa" component={GPA} />
 

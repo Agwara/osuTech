@@ -9,33 +9,20 @@
   position: relative;
 }
 
-.signupLinkContainer {
-  position: absolute;
-  top: 20px;
-  right: 100px;
-}
-
-.linkText {
-  font-family: "Roboto";
+.loginText {
   font-style: normal;
-  font-weight: 550;
+  font-weight: 500;
   font-size: 14px;
 
-  color: #505050;
-}
-
-.link {
-  font-family: "Product" "Sans" Black;
-  font-style: normal;
-  font-size: 14px;
-  font-weight: 900;
-  letter-spacing: 0.5px;
-  text-decoration: none;
-  border-bottom: 1.5px #df8a09 solid;
-  padding-bottom: 0.5px;
-  margin-left: 5px;
+  text-decoration-line: underline;
 
   color: #df8a09;
+
+  position: absolute;
+  right: 40px;
+  top: 20px;
+
+  cursor: pointer;
 }
 
 .formContainer {
@@ -74,31 +61,21 @@
   height: 50px;
 }
 
-.forgotPassword {
-  height: 50px;
-
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: normal;
-  font-size: 16px;
-  text-align: center;
-  line-height: 150%;
-  color: #505050;
-
-  cursor: pointer;
-}
-
 .formInputWidth {
   width: 300px;
 }
 
-@media screen and (max-width: 800px) {
-  .signupLinkContainer {
-    width: 90%;
-    justify-content: center;
-    right: unset;
-  }
+.rakoni {
+  font-weight: 500;
+  font-size: 15px;
 
+  color: #000000;
+
+  position: absolute;
+  bottom: 20px;
+}
+
+@media screen and (max-width: 800px) {
   .formContainer {
     margin-top: 50px;
     row-gap: 10px;

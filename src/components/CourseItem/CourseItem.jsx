@@ -37,7 +37,7 @@ const CourseItem = (props) => {
       </div>
       <p style={{color: props.textColor}} className={`${styles.courseItemText}`}>{props.course["department"]}</p>
       <p style={{color: props.textColor}} className={`${styles.courseItemText}`}>{props.course["courseTitle"]}</p>
-      <p style={{color: props.textColor}} className={`${styles.courseItemText} ${styles.smallPaddingLeft}`}>{props.course["unit"]}</p>
+      <p style={{color: itemChecked ? "green" : props.textColor}} className={`${styles.courseItemText} ${styles.smallPaddingLeft}`}>{props.course["unit"]}</p>
       <p style={{color: props.textColor}} className={`${styles.courseItemText} ${styles.smallPaddingLeft}`}>{props.course["semester"]}</p>
       <p style={{color: props.textColor}} className={`${styles.courseItemText} ${styles.smallPaddingLeft}`}>{props.course["level"]}</p> 
     </div>

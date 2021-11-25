@@ -23,7 +23,7 @@ const CourseForm = () => {
 
   const [ showModal, setShowModal] = useState(false)
 
-  const [tempCourse, setTempCourse] = useState([])
+  // const [tempCourse, setTempCourse] = useState([])
   
   const [mounted, setMounted] = useState(true)
 
@@ -42,7 +42,7 @@ const CourseForm = () => {
     if (mounted) {
       setTimeout(() => {
         setLoadingState("success")
-      }, 2000)
+      }, 1000)
     }
 
     return () => {
@@ -50,9 +50,9 @@ const CourseForm = () => {
     }
   })
 
-  useEffect(() => {
-    setTempCourse([...registeredCourses])
-  }, [])
+  // useEffect(() => {
+  //   setTempCourse([...registeredCourses])
+  // }, [])
 
   const goToCourseForm = () => {
     setShowModal(true)
@@ -61,11 +61,11 @@ const CourseForm = () => {
   return (
     <div className={styles.container}>
       <div className={styles.getResult}>
-
         <CourseFormList 
           loadingState={loadingState}
           totalUnits={totalUnits}
-          tempCourse={tempCourse}
+          // tempCourse={tempCourse}
+          tempCourse={registeredCourses}
           ref={componentRef}
         />
 
